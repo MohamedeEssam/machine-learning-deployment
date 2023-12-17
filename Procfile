@@ -1,0 +1,1 @@
+web gunicorn MLDeploy.wsgi:application --log-file -

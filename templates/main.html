@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        header {
+            background-color: beige;
+            color: black;
+            text-align: center;
+            font-size: 35px;
+            padding: 30px;
+        }
+        footer {
+            background-color: beige;
+            color: black;
+            text-align: center;
+            font-size: 25px;
+            padding: 10px;
+        }
+        body {
+            background-color: beige;
+        }
+
+    </style>
+</head>
+<body>
+    <header>Welcome In My Django Application</header>
+    <div class="container mt-5">
+        <h1>Uber Fare Amount Django Application</h1>
+        <hr>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="passenger_count">Passenger Count:</label>
+                <input type="number" class="form-control" id="passenger_count" name="passenger_count" required>
+
+                <label for="hour">Hour:</label>
+                <input type="number" class="form-control" id="hour" name="hour" required>
+
+                <label for="month">Month:</label>
+                <input type="number" class="form-control" id="month" name="month" required>
+
+                <label for="weekday">Week Day:</label>
+                <input type="number" class="form-control" id="weekday" name="weekday" required>
+
+                <label for="year">Year:</label>
+                <input type="number" class="form-control" id="year" name="year" required>
+
+                <label for="distance">Distance:</label>
+                <input type="number" class="form-control" id="distance" name="distance" required>
+            </div>
+            <!-- Add similar form groups for other input fields -->
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+        {% if result %}
+        <h2>Fare amount is {{result}}</h2> 
+        {% endif %}
+    </div>
+    <footer><p>GoodBye</p></footer>
+</body>
+</html>
